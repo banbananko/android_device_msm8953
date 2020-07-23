@@ -33,7 +33,7 @@ script:
     source build/envsetup.sh
     # Choose build flavor as "eng" or "userdebug"
     BUILD_FLAVOR="eng"
-    lunch omni_msm8953-eng
+    lunch omni_msm8953-userdebug
     make -j$(nproc --all) recoveryimage
     exit
     EOF

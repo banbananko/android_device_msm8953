@@ -1,0 +1,13 @@
+/boot       emmc        /dev/block/bootdevice/by-name/boot         flags=display="Boot"
+/recovery   emmc        /dev/block/bootdevice/by-name/recovery     flags=display="Recovery";backup=1
+/system     ext4        /dev/block/bootdevice/by-name/system       flags=display="System";backup=1;flashimg
+/data       ext4        /dev/block/bootdevice/by-name/userdata     flags=encryptable=footer
+/storage    ext4        /data/media/0                              flags=display="Internal Storage";usermrf;backup=1;fsflags="bind"
+/cache      ext4        /dev/block/bootdevice/by-name/cache        flags=display="Cache";backup=0;wipeingui
+/misc       emmc        /dev/block/bootdevice/by-name/misc         flags=display="Misc";backup=1
+/vendor		ext4        /dev/block/bootdevice/by-name/vendor       flags=display="Vendor";backup=1
+# splash
+/splash     emmc        /dev/block/mmcblk0p18                      flags=backup=1;display="Splash";flashimg
+# External removable devices
+/external_sd    auto      /dev/block/mmcblk1p1           flags=display="MicroSD";storage;wipeingui;removable
+/usb-otg        auto      /dev/block/sda1                flags=fsflags=utf8;display="USB-OTG";storage;wipeingui;removable

@@ -30,6 +30,7 @@ before_script:
   - wget -q ${TWRP_SOURCE_3} -O $HOME/twrp.tar.xz.ac
   - wget -q ${TWRP_SOURCE_4} -O $HOME/twrp.tar.xz.ad
   - cat *.tar.xz.* | tar xJf - --directory $HOME/twrp/
+  - rm -rf rm twrp.tar.*
   # - tar -xJf twrp.tar.xz --directory $HOME/twrp/ && rm twrp.tar.xz
 script:
   # Replace your $$USERNAME$$, $$REPO_URL$$, ksw, msm8953

@@ -18,9 +18,9 @@ before_script:
   # Uncomment & Use below line If Building for Lollipop-based Devices
   # - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-5.1-norepo-20200222.tar.xz"
   # Use below line If Building for Marshmallow-based Devices
-  # - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-6.0-norepo-20200222.tar.xz"
+   - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-6.0-norepo-20200222.tar.xz"
   # Uncomment & Use below line If Building for Nougat-based Devices
-   - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-7.1-norepo-20200222.tar.xz"
+  # - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-7.1-norepo-20200222.tar.xz"
   # - TWRP_SOURCE_1="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.4.0-20200708/MinimalOmniRecovery-twrp-9.0-norepo-20200708.tar.xz.aa"
   #- TWRP_SOURCE_2="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.4.0-20200708/MinimalOmniRecovery-twrp-9.0-norepo-20200708.tar.xz.ab"
   #- TWRP_SOURCE_3="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.4.0-20200708/MinimalOmniRecovery-twrp-9.0-norepo-20200708.tar.xz.ac"
@@ -31,7 +31,7 @@ before_script:
   #- wget -q ${TWRP_SOURCE_4} -O $HOME/twrp.tar.xz.ad
   #- cat *.tar.xz.* | tar xJf - --directory $HOME/twrp/
   #- rm -rf rm twrp.tar.*
-  - wget -q ${TWRP_SOURCE} -O $HOME/twrp.tar.xz.aa
+  - wget -q ${TWRP_SOURCE} -O $HOME/twrp.tar.xz
   - tar -xJf twrp.tar.xz --directory $HOME/twrp/ && rm twrp.tar.xz
 script:
   # Replace your $$USERNAME$$, $$REPO_URL$$, ksw, msm8953

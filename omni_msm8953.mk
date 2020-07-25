@@ -1,33 +1,41 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+#
+# Copyright (C) 2019 The Android Open Source Project
+# Copyright (C) 2019 The TWRP Open Source Project
+# Copyright (C) 2020 SebaUbuntu's TWRP device tree generator 
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
-# Add this line if your device is 64-bit
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-# Otherwise, If you have 32-bit device, add the below line instead of above line
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk
+# Specify phone tech before including full_phone
+$(call inherit-product, vendor/omni/config/gsm.mk)
 
-# Another common config inclusion
-$(call inherit-product, $(SRC_TARGET_DIR)/product/embedded.mk)
-
-# If you are building from OmniROM's minimal source, Inherit some common Omni stuff.
+# Inherit some common Omni stuff.
 $(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, build/target/product/embedded.mk)
 
-# Replace msm8953 with your Device Name's Value.
-# Replace BMW with your Brand's / Manufacturer's Value.
-PRODUCT_COPY_FILES += device/BMW/msm8953/prebuilt/zImage:kernel
-# Fles under $(LOCAL_PATH)/recovery/root/ gets automatically copied into recovery
-# PRODUCT_COPY_FILES += $(LOCAL_PATH)/recovery/root/*:root/*
+# Inherit Telephony packages
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Inherit language packages
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+# Inherit 64bit support
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+
+# Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := msm8953
 PRODUCT_NAME := omni_msm8953
-PRODUCT_BRAND := BMW
-PRODUCT_MODEL := msm8953
-PRODUCT_MANUFACTURER := BMW
-
-# Forcefully add mtp support (adb is already there)
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=adb,mtp
-
-# Add fingerprint from Stock ROM build.prop
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    # These lines are from my device. You MUST Replace yours.
-    BUILD_FINGERPRINT="Android/msm8953_64/msm8953_64:9/PKQ1.190202.001/09250410:userdebug/test-keys"
+PRODUCT_BRAND := ksw
+PRODUCT_MODEL := BMW_HU
+PRODUCT_MANUFACTURER := ksw
+PRODUCT_RELEASE_NAME := BMW_HU

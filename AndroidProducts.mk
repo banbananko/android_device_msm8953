@@ -1,7 +1,20 @@
-# Replace msm8953 with your Device Name's Value.
-# Replace BMW with your Brand's / Manufacturer's Value.
-# The part of last line in mine looks like "omni_Primo_RX5.mk"
+#
+# Copyright (C) 2019 The Android Open Source Project
+# Copyright (C) 2019 The TWRP Open Source Project
+# Copyright (C) 2020 SebaUbuntu's TWRP device tree generator 
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
-LOCAL_PATH := device/BMW/msm8953
-
-PRODUCT_MAKEFILES := $(LOCAL_PATH)/omni_msm8953.mk
+PRODUCT_MAKEFILES := \
+	$(LOCAL_DIR)/omni_msm8953.mk

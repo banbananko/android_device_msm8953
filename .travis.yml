@@ -29,7 +29,7 @@ before_script:
   - wget -q ${TWRP_SOURCE_2} -O $HOME/twrp.tar.xz.ab
   - wget -q ${TWRP_SOURCE_3} -O $HOME/twrp.tar.xz.ac
   - wget -q ${TWRP_SOURCE_4} -O $HOME/twrp.tar.xz.ad
-  - cat *.tar.gz.* | tar xjfz - --directory $HOME/twrp/
+  - cat *.tar.xz.* | tar xjfz - --directory $HOME/twrp/
   # - tar -xJf twrp.tar.xz --directory $HOME/twrp/ && rm twrp.tar.xz
 script:
   # Replace your $$USERNAME$$, $$REPO_URL$$, BMW, msm8953
